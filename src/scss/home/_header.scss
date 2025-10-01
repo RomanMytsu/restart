@@ -1,0 +1,164 @@
+.header {
+  padding: 23px 0 0 0;
+
+  @media screen and (min-width: $bp-tablet) {
+    padding: 25px 0 0;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 23px 0 44px;
+  }
+  @media screen and (min-width: $bp-laptop) {
+    padding: 23px 0 36px;
+  }
+  &__container {
+    padding: 0 15px;
+    @media screen and (min-width: $bp-tablet) {
+      padding: 0 30px;
+    }
+    @media screen and (min-width: 1024px) {
+      padding: 0 180px 0 180px;
+    }
+    @media screen and (min-width: $bp-laptop) {
+      padding: 0 200px 0 200px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      padding: 0 280px 0 280px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (min-width: 500px) {
+      gap: 20px;
+    }
+    @media screen and (min-width: $bp-tablet) {
+      gap: 102px;
+    }
+    @media screen and (min-width: 1024px) {
+      gap: 0;
+      flex-direction: column;
+    }
+    @media screen and (min-width: $bp-laptop) {
+      display: block;
+    }
+  }
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 500px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @media screen and (min-width: $bp-tablet) {
+      gap: 102px;
+    }
+    @media screen and (min-width: 1024px) {
+      gap: 363px;
+      margin-bottom: 23px;
+    }
+    @media screen and (min-width: $bp-laptop) {
+      justify-content: flex-start;
+    }
+  }
+  &__logo-link {
+    margin-bottom: 10px;
+    @media screen and (min-width: $bp-tablet) {
+      margin-bottom: 0;
+    }
+  }
+  &__text {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-left: 14px;
+    white-space: nowrap;
+    @media screen and (min-width: $bp-tablet) {
+      margin-left: 0;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      margin-top: 15px;
+    }
+  }
+  &__nav {
+    display: none;
+    @media screen and (min-width: 1024px) {
+      position: absolute;
+      top: 126px;
+      display: flex;
+      align-items: center;
+      border-radius: 5px;
+      border: 1px solid #e2e2e2;
+      background: #fff;
+      padding: 26px 0 30px;
+    }
+    @media screen and (min-width: $bp-laptop) {
+      top: 117px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      top: 118px;
+      padding: 31px 0 30px;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    &__menu {
+      display: flex;
+      li {
+        position: relative;
+        // padding: 0 47px 0 42px;
+        @media screen and (min-width: $bp-laptop) {
+          // padding: 0 67px 0 62px;
+        }
+        @media screen and (min-width: $bp-desktop) {
+          // padding: 0 87px 0 82px;
+          // &::after {
+            right: 50px;
+          // }
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 50px;
+          background-color: #e2e2e2;
+        }
+        &:nth-child(2)::after {
+          right: 80px;
+        }
+        &:last-child::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__menu-link {
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+    line-height: normal;
+    white-space: nowrap;
+    @media screen and (min-width: $bp-desktop) {
+      font-size: 16px;
+    }
+  }
+  &__burger {
+    display: flex;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    margin: -35px 0 0 -18px;
+    @media screen and (min-width: 500px) {
+      margin: 0;
+    }
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
+}
