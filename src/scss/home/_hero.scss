@@ -1,0 +1,144 @@
+.hero {
+  padding: 21px 0 0 0;
+  @media screen and (min-width: $bp-tablet) {
+    padding: 34px 0 0 0;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 336px 0 309px;
+    background-image: url(../images/home/hero-bg.webp);
+    max-width: 1920px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+  }
+  &__container {
+    padding: 0 15px;
+    @media screen and (min-width: $bp-tablet) {
+      padding: 0 45px 0 43px;
+    }
+    @media screen and (min-width: 1024px) {
+      padding: 0;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @media screen and (min-width: 500px) {
+      flex-direction: row;
+      gap: 29px;
+    }
+    @media screen and (min-width: 1024px) {
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 35px 37px 34px;
+    border-radius: 5px;
+    background-color: #fff;
+    @media screen and (min-width: $bp-tablet) {
+      padding: 36px 39px 41px 39px;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 280px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      padding: 32px 30px 37px 29px;
+    }
+  }
+  &__circle {
+    display: none;
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 280px;
+      width: 67px;
+      height: 67px;
+      background-color: #f00;
+      border-radius: 50%;
+      color: #fff;
+      text-align: center;
+      font-size: 28px;
+      line-height: 0.83;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      font-size: 36px;
+    }
+  }
+  &__circle-icon {
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: -2px;
+    }
+  }
+  &__circle-line {
+    @media screen and (min-width: 1024px) {
+      width: 1px;
+      height: 30px;
+      background: #fff;
+    }
+  }
+  &__card-content {
+    display: flex;
+    gap: 8px;
+  }
+  &__icon {
+    flex-shrink: 0;
+    margin-top: 5px;
+    @media screen and (min-width: $bp-tablet) {
+      margin-top: 0;
+      width: 47px;
+      height: 47px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      width: 42px;
+      height: 42px;
+    }
+  }
+  &__card-text {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.37;
+    min-width: 172px;
+    margin-bottom: 12px;
+    @media screen and (min-width: $bp-tablet) {
+      margin-bottom: 18px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      margin-bottom: 32px;
+    }
+  }
+  &__card-link {
+    border-radius: 100px;
+    border: 1px solid #cecece;
+    padding: 16px 0 15px;
+    color: #333;
+    font-size: 16px;
+    width: 200px;
+    text-align: center;
+    @media screen and (min-width: $bp-tablet) {
+      width: 225px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      width: 200px;
+      margin-right: 25px;
+    }
+  }
+}
+.sell {
+  padding: 34px 25px 37px 47px;
+  @media screen and (min-width: $bp-tablet) {
+    padding: 38px 50px 41px 56px;
+  }
+  @media screen and (min-width: $bp-desktop) {
+    padding: 41px 17px 37px 43px;
+  }
+}
