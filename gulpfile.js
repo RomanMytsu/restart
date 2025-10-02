@@ -20,7 +20,7 @@ const uglify = uglifyEs.default;
 const browserSync = browserSyncLib.create();
 
 export const styles = () => {
-  return src("src/scss/**/*.scss", { sourcemaps: true })
+  return src("./src/scss/**/*.scss", { sourcemaps: true })
     .pipe(scss({ style: "compressed" }))
     .pipe(
       autoprefixer({
@@ -34,7 +34,7 @@ export const styles = () => {
 };
 
 export const scripts = () => {
-  return src("src/js/**/*.js")
+  return src("./src/js/**/*.js")
     .pipe(concat("main.min.js"))
     .pipe(uglify())
     .pipe(dest("./docs/js"))
@@ -42,7 +42,7 @@ export const scripts = () => {
 };
 
 export const pages = () => {
-  return src("src/pages/**/*.html")
+  return src("./src/pages/**/*.html")
     .pipe(
       fileInclude({
         prefix: "@@",
@@ -65,8 +65,8 @@ export const components = () => {
 };
 
 export const images = () => {
-  return src("src/images/**/*.{jpg,jpeg,png,webp}", { encoding: false })
-    .pipe(newer("docs/images"))
+  return src("./src/images/**/*.{jpg,jpeg,png,webp}", { encoding: false })
+    .pipe(newer("./docs/images"))
     .pipe(webp({ quality: 50 }))
     .pipe(
       imagemin([
@@ -80,7 +80,7 @@ export const images = () => {
 };
 
 export const sprite = () => {
-  return src("src/images/**/*.svg")
+  return src("./src/images/**/*.svg")
     .pipe(
       svgSprite({
         mode: {
@@ -95,15 +95,15 @@ export const sprite = () => {
 };
 
 export const fonts = () => {
-  return src("src/fonts/*", { encoding: false })
+  return src("./src/fonts/*", { encoding: false })
     .pipe(
       fonter({
         formats: ["woff"],
       })
     )
-    .pipe(dest("docs/fonts/"))
+    .pipe(dest("./docs/fonts/"))
 
-    .pipe(src("src/fonts/*", { encoding: false }))
+    .pipe(src("./src/fonts/*", { encoding: false }))
     .pipe(ttf2woff2())
     .pipe(dest("./docs/fonts/"));
 };
@@ -115,7 +115,7 @@ export const reset = () => {
 export const watching = () => {
   browserSync.init({
     server: {
-      baseDir: "docs/",
+      baseDir: "./docs/",
     },
   });
   watch(["src/scss/**/*.scss"], styles);
