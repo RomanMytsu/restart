@@ -37,7 +37,7 @@ export const scripts = () => {
   return src("src/js/**/*.js")
     .pipe(concat("main.min.js"))
     .pipe(uglify())
-    .pipe(dest("docs/js"))
+    .pipe(dest("./docs/js"))
     .pipe(browserSync.stream());
 };
 
@@ -47,12 +47,9 @@ export const pages = () => {
       fileInclude({
         prefix: "@@",
         basepath: "@file",
-        context: {
-          root: "./",
-        },
       })
     )
-    .pipe(dest("docs/"))
+    .pipe(dest("./docs/"))
     .pipe(browserSync.stream());
 };
 export const components = () => {
@@ -61,12 +58,9 @@ export const components = () => {
       fileInclude({
         prefix: "@@",
         basepath: "@file",
-        context: {
-          root: "./",
-        },
       })
     )
-    .pipe(dest("docs/components"))
+    .pipe(dest("./docs/components"))
     .pipe(browserSync.stream());
 };
 
@@ -81,7 +75,7 @@ export const images = () => {
         svgo({ plugins: [{ name: "removeViewBox", active: false }] }),
       ])
     )
-    .pipe(dest("docs/images"))
+    .pipe(dest("./docs/images"))
     .pipe(browserSync.stream());
 };
 
@@ -97,7 +91,7 @@ export const sprite = () => {
         },
       })
     )
-    .pipe(dest("docs/images/"));
+    .pipe(dest("./docs/images/"));
 };
 
 export const fonts = () => {
@@ -111,11 +105,11 @@ export const fonts = () => {
 
     .pipe(src("src/fonts/*", { encoding: false }))
     .pipe(ttf2woff2())
-    .pipe(dest("docs/fonts/"));
+    .pipe(dest("./docs/fonts/"));
 };
 
 export const reset = () => {
-  return deleteAsync("./docs");
+  return deleteAsync("./docs/");
 };
 
 export const watching = () => {
