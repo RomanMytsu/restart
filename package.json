@@ -2,7 +2,7 @@
   "name": "restart",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://github.com/RomanMytsu/restart",
+  "homepage": "https://github.com/RomanMytsu/restart#readme",
   "bugs": {
     "url": "https://github.com/RomanMytsu/restart/issues"
   },
@@ -13,7 +13,7 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "index.js",
+  "main": "gulfile.js",
   "scripts": {
     "dev": "gulp"
   },

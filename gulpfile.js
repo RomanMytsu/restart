@@ -50,7 +50,8 @@ export const pages = () => {
         basepath: "@file",
       })
     )
-    .pipe(replace(/@images\//g, "images/"))
+    .pipe(replace(/src="\/images\//g, 'src="images/'))
+    .pipe(replace(/href="\/images\//g, 'href="images/'))
     .pipe(dest("./docs/"))
     .pipe(browserSync.stream());
 };
@@ -62,7 +63,8 @@ export const components = () => {
         basepath: "@file",
       })
     )
-    .pipe(replace(/@images\//g, "images/"))
+    .pipe(replace(/src="\/images\//g, 'src="images/'))
+    .pipe(replace(/href="\/images\//g, 'href="images/'))
     .pipe(dest("./docs/components"))
     .pipe(browserSync.stream());
 };
