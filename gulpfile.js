@@ -57,7 +57,15 @@ export const pages = () => {
 };
 export const components = () => {
   return src("src/components/**/*.html")
-    .pipe(fileInclude({ prefix: "@@", basepath: "@file" }))
+    .pipe(
+      fileInclude({
+        prefix: "@@",
+        basepath: "@file",
+        context: {
+          root: "./",
+        },
+      })
+    )
     .pipe(dest("docs/components"))
     .pipe(browserSync.stream());
 };
