@@ -47,6 +47,9 @@ export const pages = () => {
       fileInclude({
         prefix: "@@",
         basepath: "@file",
+        context: {
+          root: "./",
+        },
       })
     )
     .pipe(dest("docs/"))
