@@ -14,6 +14,7 @@ import ttf2woff2 from "gulp-ttf2woff2";
 import include from "gulp-include";
 import { deleteAsync } from "del";
 import fileInclude from "gulp-file-include";
+import replace from "gulp-replace";
 
 const scss = gulpSass(sass);
 const uglify = uglifyEs.default;
@@ -49,6 +50,7 @@ export const pages = () => {
         basepath: "@file",
       })
     )
+    .pipe(replace(/@images\//g, "images/"))
     .pipe(dest("./docs/"))
     .pipe(browserSync.stream());
 };
@@ -60,6 +62,7 @@ export const components = () => {
         basepath: "@file",
       })
     )
+    .pipe(replace(/@images\//g, "images/"))
     .pipe(dest("./docs/components"))
     .pipe(browserSync.stream());
 };
