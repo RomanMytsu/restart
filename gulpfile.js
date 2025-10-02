@@ -29,7 +29,7 @@ export const styles = () => {
       })
     )
     .pipe(concat("style.min.css"))
-    .pipe(dest("./dist/css", { sourcemaps: "." }))
+    .pipe(dest("./docs/css", { sourcemaps: "." }))
     .pipe(browserSync.stream());
 };
 
@@ -37,7 +37,7 @@ export const scripts = () => {
   return src("src/js/**/*.js")
     .pipe(concat("main.min.js"))
     .pipe(uglify())
-    .pipe(dest("dist/js"))
+    .pipe(dest("docs/js"))
     .pipe(browserSync.stream());
 };
 
@@ -49,19 +49,19 @@ export const pages = () => {
         basepath: "@file",
       })
     )
-    .pipe(dest("dist/"))
+    .pipe(dest("docs/"))
     .pipe(browserSync.stream());
 };
 export const components = () => {
   return src("src/components/**/*.html")
     .pipe(fileInclude({ prefix: "@@", basepath: "@file" }))
-    .pipe(dest("dist/components"))
+    .pipe(dest("docs/components"))
     .pipe(browserSync.stream());
 };
 
 export const images = () => {
   return src("src/images/**/*.{jpg,jpeg,png,webp}", { encoding: false })
-    .pipe(newer("dist/images"))
+    .pipe(newer("docs/images"))
     .pipe(webp({ quality: 50 }))
     .pipe(
       imagemin([
@@ -70,7 +70,7 @@ export const images = () => {
         svgo({ plugins: [{ name: "removeViewBox", active: false }] }),
       ])
     )
-    .pipe(dest("dist/images"))
+    .pipe(dest("docs/images"))
     .pipe(browserSync.stream());
 };
 
@@ -86,33 +86,31 @@ export const sprite = () => {
         },
       })
     )
-    .pipe(dest("dist/images/"));
+    .pipe(dest("docs/images/"));
 };
 
 export const fonts = () => {
-  return (
-    src("src/fonts/*", { encoding: false })
-      .pipe(
-        fonter({
-          formats: ["woff"],
-        })
-      )
-      .pipe(dest("dist/fonts/"))
+  return src("src/fonts/*", { encoding: false })
+    .pipe(
+      fonter({
+        formats: ["woff"],
+      })
+    )
+    .pipe(dest("docs/fonts/"))
 
-      .pipe(src("src/fonts/*", { encoding: false }))
-      .pipe(ttf2woff2())
-      .pipe(dest("dist/fonts/"))
-  );
+    .pipe(src("src/fonts/*", { encoding: false }))
+    .pipe(ttf2woff2())
+    .pipe(dest("docs/fonts/"));
 };
 
 export const reset = () => {
-  return deleteAsync("./dist");
+  return deleteAsync("./docs");
 };
 
 export const watching = () => {
   browserSync.init({
     server: {
-      baseDir: "dist/",
+      baseDir: "docs/",
     },
   });
   watch(["src/scss/**/*.scss"], styles);
