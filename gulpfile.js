@@ -2,7 +2,6 @@ import { src, dest, watch, parallel, series } from "gulp";
 import gulpSass from "gulp-sass";
 import * as sass from "sass";
 import concat from "gulp-concat";
-import uglifyEs from "gulp-uglify-es";
 import browserSyncLib from "browser-sync";
 import autoprefixer from "gulp-autoprefixer";
 import webp from "gulp-webp";
@@ -11,13 +10,12 @@ import newer from "gulp-newer";
 import svgSprite from "gulp-svg-sprite";
 import fonter from "gulp-fonter";
 import ttf2woff2 from "gulp-ttf2woff2";
-import include from "gulp-include";
 import { deleteAsync } from "del";
 import fileInclude from "gulp-file-include";
 import replace from "gulp-replace";
+import webpackStream from "webpack-stream";
 
 const scss = gulpSass(sass);
-const uglify = uglifyEs.default;
 const browserSync = browserSyncLib.create();
 
 export const styles = () => {
@@ -35,9 +33,29 @@ export const styles = () => {
 };
 
 export const scripts = () => {
-  return src("./src/js/**/*.js")
-    .pipe(concat("main.min.js"))
-    .pipe(uglify())
+  return src("./src/js/**/*.js", { sourcemaps: true })
+    .pipe(
+      webpackStream({
+        mode: "development",
+        output: {
+          filename: "main.min.js",
+        },
+        module: {
+          rules: [
+            {
+              test: /\.js$/,
+              exclude: /node_modules/,
+              use: {
+                loader: "babel-loader",
+                options: {
+                  presets: ["@babel/preset-env"],
+                },
+              },
+            },
+          ],
+        },
+      })
+    )
     .pipe(dest("./docs/js"))
     .pipe(browserSync.stream());
 };

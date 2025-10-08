@@ -18,6 +18,9 @@
     "dev": "gulp"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "babel-loader": "^10.0.0",
     "browser-sync": "^3.0.4",
     "del": "^8.0.1",
     "gulp": "^5.0.1",
@@ -36,6 +39,8 @@
     "gulp-uglify-es": "^3.0.0",
     "gulp-webp": "^5.1.0",
     "merge-stream": "^2.0.0",
-    "sass": "^1.93.2"
+    "sass": "^1.93.2",
+    "webpack": "^5.102.1",
+    "webpack-stream": "^7.0.0"
   }
 }

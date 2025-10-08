@@ -2,10 +2,13 @@
   padding: 13px 0 39px;
   background-color: #fff;
   @media screen and (min-width: $bp-tablet) {
-    padding: 13px 0 40px;
+    padding: 12px 0 40px;
   }
-  @media screen and (min-width: $bp-tablet) {
+  @media screen and (min-width: $bp-laptop) {
     padding: 69px 0 32px;
+  }
+  @media screen and (min-width: $bp-desktop) {
+    padding: 70px 0 32px;
   }
 
   &__container {
@@ -13,8 +16,31 @@
     @media screen and (min-width: $bp-tablet) {
       padding: 0 30px;
     }
-    @media screen and (min-width: $bp-tablet) {
-      padding: 0 200px;
+    @media screen and (min-width: $bp-laptop) {
+      padding: 21px 200px 0;
+      position: relative;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      padding: 41px 280px 0;
+    }
+  }
+  &__nav {
+    display: none;
+    @media screen and (min-width: $bp-laptop) {
+      position: absolute;
+      top: -84px;
+      left: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      border: 1px solid #e2e2e2;
+      background: #fff;
+      padding: 31px 0 30px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      top: -68px;
+      left: 279px;
     }
   }
   &__text {
@@ -25,6 +51,9 @@
     margin-bottom: 10px;
     @media screen and (min-width: $bp-tablet) {
       margin-bottom: 18px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      margin-bottom: -8px;
     }
   }
   &__copywrite-wrapper {
