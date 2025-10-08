@@ -103,7 +103,7 @@
     border-radius: 5px;
     border: 1px solid #e6e6e6;
     background: #fff;
-    @media screen and (min-width: $bp-desktop) {
+    @media screen and (min-width: $bp-laptop) {
       background-image: url(../images/about/about-hand-desc.webp);
       background-repeat: no-repeat;
       background-size: auto;
