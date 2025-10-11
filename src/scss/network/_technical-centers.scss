@@ -1,7 +1,22 @@
 .technical-centers {
   padding: 38px 0 47px;
+  @media screen and (min-width: $bp-tablet) {
+    padding: 91px 0 54px;
+  }
+  @media screen and (min-width: $bp-laptop) {
+    padding: 85px 0 97px;
+  }
   &__container {
     padding: 0 15px;
+    @media screen and (min-width: $bp-tablet) {
+      padding: 0 30px;
+    }
+    @media screen and (min-width: $bp-laptop) {
+      padding: 0 120px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      padding: 0 280px;
+    }
   }
   &__title {
     color: #333;
@@ -9,18 +24,73 @@
     font-size: 20px;
     line-height: 1.3;
     margin-bottom: 36px;
+    @media screen and (min-width: $bp-tablet) {
+      text-align: left;
+      margin-bottom: 31px;
+    }
+    @media screen and (min-width: $bp-laptop) {
+      margin-bottom: 28px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      margin-bottom: 34px;
+    }
+  }
+  &__wrapper-list {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    @media screen and (min-width: $bp-tablet) {
+      gap: 51px;
+    }
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 5px;
+    }
+    @media screen and (min-width: $bp-laptop) {
+      gap: 20px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      gap: 38px;
+    }
+  }
+  &__column {
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: $bp-tablet) {
+      flex: 1 1 50%;
+      &:nth-of-type(2) {
+        .technical-centers__item:nth-of-type(1) {
+          padding-bottom: 25px;
+        }
+        .technical-centers__item:nth-of-type(2) {
+          padding-bottom: 30px;
+        }
+        .technical-centers__item:nth-of-type(3) {
+          display: none;
+        }
+      }
+    }
   }
   &__wrapper-icon {
     display: flex;
     align-items: center;
     gap: 7px;
     margin-bottom: 13px;
+    @media screen and (min-width: $bp-tablet) {
+      margin-bottom: 18px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      margin-bottom: 16px;
+    }
   }
   &__nav-text {
     color: #333;
     font-size: 18px;
     line-height: 1.44;
   }
+
   &__list {
     display: flex;
     flex-direction: column;
@@ -28,15 +98,52 @@
     border-radius: 5px;
     border: 1px solid #e6e6e6;
     background: #fff;
-    padding: 20px 0 20px 13px;
-    margin-bottom: 45px;
-    &:last-child {
-      margin-bottom: 0;
+    padding: 19px 7px 20px 13px;
+    @media screen and (min-width: $bp-tablet) {
+      gap: 21px;
+      padding: 22px 30px 24px 19px;
+    }
+    @media screen and (min-width: $bp-laptop) {
+      padding: 26px 28px 24px 20px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      padding: 26px 27px 24px 19px;
     }
   }
   &__item {
     position: relative;
     padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 500px) {
+      flex-direction: row;
+      justify-content: space-between;
+      
+    }
+    @media screen and (min-width: $bp-tablet) {
+      padding-bottom: 26.5px;
+      &:nth-of-type(3) {
+        padding-bottom: 35px;
+        @media screen and (min-width: $bp-desktop) {
+          padding-bottom: 32px;
+        }
+      }
+      &:nth-of-type(2) {
+        @media screen and (min-width: $bp-desktop) {
+          padding-bottom: 31px;
+          
+        }
+      }
+      &:nth-of-type(4) {
+        @media screen and (min-width: $bp-desktop) {
+          align-items: center;
+          
+        }
+      }
+      @media screen and (min-width: $bp-desktop) {
+        padding-bottom: 24px;
+      }
+    }
 
     &::after {
       content: "";
@@ -55,23 +162,21 @@
       }
     }
   }
+  &__wrapper-item-text {
+    display: flex;
+    flex-direction: column;
+  }
   &__address {
     color: #333;
     font-size: 18px;
     line-height: 1.41;
-    display: flex;
-    align-items: center;
-    
 
-    span:not(:last-child)::after {
-      content: "";
-      display: inline-block;
-      width: 1px;
-      height: 16px;
-      background: #c4c4c4;
-      margin: 0 10px;
+    span {
+      color: #c4c4c4;
+      margin: 0 5px 0 3px;
     }
   }
+
   &__text {
     color: #666;
     font-size: 14px;
@@ -82,7 +187,15 @@
     color: #333;
     text-align: center;
     font-size: 16px;
-    padding: 16px 27px 15px 29px;
+    padding: 16px 27px 15px;
     margin-top: 20px;
+    width: 145px;
+    @media screen and (min-width: $bp-tablet) {
+      width: 155px;
+      margin-top: 0;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      width: 145px;
+    }
   }
 }
