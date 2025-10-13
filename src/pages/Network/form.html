@@ -1,5 +1,64 @@
 <section class="form">
-    <div class="form__container container">
-        
+  <div class="form__form-container container">
+    <div class="form__wrapper">
+      <h2 class="form__form-title">
+        Заповніть форму
+         для консультації або запису
+         на діагностику/ремонт
+      </h2>
+      <div class="form__form-wrapper">
+        <h3 class="form__title-form">
+          Введіть, будь ласка, ваші контактні дані
+        </h3>
+        <div class="form__line"></div>
+        <form>
+          <div class="form__form-group">
+            <label for="name">Ваше ім'я <span>*</span> </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Введіть ваше ім'я"
+              required
+            />
+          </div>
+          <div class="form__form-group">
+            <label for="phone">Телефон <span>*</span></label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Ваш контактний номер телефону"
+              required
+            />
+          </div>
+          <div class="form__form-group">
+            <label>Місто <span>*</span></label>
+            <div class="form__custom-select-wrapper">
+              <div class="form__custom-select">
+                <div class="form__custom-select-trigger">
+                  Оберіть місто зі списку
+                  <svg class="form__arrow" width="20" height="10">
+                    <use href="@images/sprite.svg#network--svg--arrow"></use>
+                  </svg>
+                </div>
+                <div class="form__custom-options-wrapper">
+                  <span class="form__custom-option" data-value="lutsk"
+                    >Луцьк</span
+                  >
+                  <span class="form__custom-option" data-value="rivne"
+                    >Рівне</span
+                  >
+                </div>
+              </div>
+              <input type="hidden" name="city" id="city-hidden" required />
+            </div>
+          </div>
+          <button class="form__form-btn modal-btn-open">
+            Замовити телефонний дзвінок
+          </button>
+        </form>
+      </div>
     </div>
+  </div>
 </section>

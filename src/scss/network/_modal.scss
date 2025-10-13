@@ -1,0 +1,74 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: opacity 0.3s, visibility 0.3s;
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+  padding: 53px 13px 27px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+
+  &__btn-close {
+    position: absolute;
+    top: 24px;
+    right: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__title {
+    color: #333;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.33;
+    width: 290px;
+    margin: 18px 0 12px;
+  }
+  &__text {
+    color: #828282;
+    text-align: center;
+    font-size: 16px;
+    width: 224px;
+    line-height: 1.5;
+  }
+  &__line {
+    height: 1px;
+    background: #e2e2e2;
+    width: 100%;
+    margin: 11px 0 27px;
+  }
+  &__list {
+    display: flex;
+    gap: 17px;
+    align-items: center;
+  }
+}
