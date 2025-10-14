@@ -1,0 +1,189 @@
+.services {
+  padding: 0 0 37px;
+  @media screen and (min-width: $bp-tablet) {
+    padding: 0 0 34px;
+  }
+  @media screen and (min-width: $bp-desktop) {
+    padding: 0 0 116px;
+  }
+  &__services-container {
+    padding: 0 15px;
+    @media screen and (min-width: $bp-tablet) {
+      padding: 0 30px;
+    }
+    @media screen and (min-width: $bp-laptop) {
+      padding: 0 120px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      padding: 0 281px 0 280px;
+    }
+  }
+
+  &__services-title {
+    display: none;
+    @media screen and (min-width: 1024px) {
+      display: block;
+      color: #333;
+      font-size: 20px;
+      line-height: 1.3;
+      margin-bottom: 13px;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: 29px;
+    border-radius: 5px;
+    border: 1px solid #e6e6e6;
+    background: #fff;
+    padding: 17px 13px 39px 11px;
+    @media screen and (min-width: $bp-tablet) {
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: auto;
+      align-items: start;
+      gap: 33px 29px;
+      padding: 24px 15px 37px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      padding: 38px 0 44px 40px;
+      gap: 47px 0;
+    }
+  }
+  &__service:nth-child(1),
+  &__service:nth-child(2),
+  &__service:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.62;
+    @media screen and (min-width: $bp-desktop) {
+      margin-bottom: 11px;
+    }
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(264px, 1fr));
+    gap: 13px;
+    @media screen and (min-width: $bp-tablet) {
+      gap: 33px;
+    }
+  }
+  &__service:nth-child(4) {
+    display: none;
+    @media screen and (min-width: $bp-tablet) {
+      display: block;
+      gap: 15px;
+    }
+  }
+  &__service:nth-child(3) {
+    @media screen and (min-width: $bp-desktop) {
+      display: none;
+    }
+  }
+  &__service:nth-child(3) .services__line {
+    display: none;
+    @media screen and (min-width: $bp-tablet) {
+      display: block;
+    }
+  }
+  &__service:nth-child(1) .services__grid {
+    gap: 12px;
+    @media screen and (min-width: $bp-tablet) {
+      gap: 32px;
+    }
+  }
+  &__service:nth-child(2) .services__grid {
+    gap: 14px;
+    @media screen and (min-width: $bp-tablet) {
+      gap: 39px 32px;
+    }
+  }
+  &__service:nth-child(3) .services__grid {
+    gap: 18px;
+    @media screen and (min-width: $bp-tablet) {
+      gap: 31px;
+    }
+  }
+  &__service:nth-child(4) .services__grid {
+    gap: 31px;
+  }
+  &__service:nth-child(5) .services__title {
+    margin-top: -8px;
+    @media screen and (min-width: $bp-tablet) {
+      margin-top: 0;
+    }
+  }
+  &__service:nth-child(3) {
+    .services__link {
+      line-height: 1.75;
+      margin-top: 28px;
+      @media screen and (min-width: $bp-tablet) {
+        margin-top: 33px;
+      }
+    }
+  }
+
+  &__service:nth-child(1) .services__line {
+    @media screen and (min-width: $bp-tablet) {
+      margin-top: 41px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      margin-top: 37px;
+    }
+  }
+  &__service:nth-child(2) .services__line {
+    @media screen and (min-width: $bp-tablet) {
+      margin-top: 39px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      margin-top: 49px;
+    }
+  }
+  &__service:nth-child(3) .services__line {
+    @media screen and (min-width: $bp-tablet) {
+      margin-top: 41px;
+    }
+  }
+  &__service:nth-child(4) .services__link {
+    margin-top: 22px;
+    white-space: nowrap;
+    width: 0;
+  }
+
+  &__item {
+    color: #777;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+  &__link {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.37;
+    margin-top: 21px;
+    width: 202px;
+    @media screen and (min-width: $bp-tablet) {
+      width: auto;
+      margin-top: 40px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      margin-top: 15px;
+    }
+  }
+  &__link-frag {
+    color: #337ab7;
+    line-height: 1.37;
+  }
+
+  &__line {
+    height: 1px;
+    background: #e2e2e2;
+    width: 96%;
+    margin-top: 27px;
+    @media screen and (min-width: $bp-desktop) {
+      width: 100%;
+    }
+  }
+}
