@@ -1,4 +1,5 @@
 .supply {
+  background: #fff;
   padding: 0 0 44px;
   @media screen and (min-width: $bp-tablet) {
     padding: 45px 0 77px;
@@ -9,7 +10,6 @@
   &__supply-container {
     // padding: 0 15px;
     @media screen and (min-width: $bp-tablet) {
-      padding: 0 30px;
     }
     @media screen and (min-width: $bp-desktop) {
       padding: 0 280px;
@@ -19,7 +19,7 @@
   &__wrapper {
     display: grid;
     justify-items: center;
-    background: #fff;
+
     padding: 38px 0 40px;
     @media screen and (min-width: $bp-tablet) {
       padding: 27px 0 0;
@@ -44,44 +44,31 @@
       align-items: center;
     }
   }
-  &__bg {
-    background-image: url("../images/solutions/solutions-img1-mob.webp");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 320px;
-    height: 141px;
-    margin-bottom: -22px;
-    @media screen and (min-width: $bp-tablet) {
-      background-image: url("../images/solutions/solutions-img1-tab.webp");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      width: 768px;
-      height: 341px;
-      margin-bottom: 0;
-    }
-    @media screen and (min-width: $bp-desktop) {
-      background-image: url("../images/solutions/solutions-img1-desc.webp");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      max-width: 1920px;
-      height: 603px;
-      margin-bottom: 0;
-    }
-  }
   &__list {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
     @media screen and (min-width: 500px) {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 32px 1px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px 20px;
+      grid-row: 1;
+      justify-items: center;
+      align-items: center;
+      margin-bottom: -5px;
+      padding: 0 30px;
+    }
+    @media screen and (min-width: $bp-tablet) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px 52px;
       grid-row: 1;
       justify-items: baseline;
       align-items: start;
       margin-bottom: -5px;
+      padding: 0 30px;
+    }
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 31px;
     }
   }
   &__content-item {
@@ -110,30 +97,6 @@
       width: auto;
       margin-top: -13px;
       margin-bottom: 18px;
-    }
-  }
-  &__bg-work {
-    background: url("../images/solutions/solutions-img2-mob.webp");
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 320px;
-    height: 141px;
-    margin-bottom: -19px;
-    @media screen and (min-width: $bp-tablet) {
-      background: url("../images/solutions/solutions-img2-tab.webp");
-      background-repeat: no-repeat;
-      background-position: center;
-      width: 768px;
-      height: 290px;
-    }
-    @media screen and (min-width: $bp-desktop) {
-      background-image: url("../images/solutions/solutions-img2-desc.webp");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      width: 1920px;
-      height: 603px;
-      margin-bottom: 0;
     }
   }
 }
