@@ -1,0 +1,120 @@
+.contacts {
+  background-color: #fff;
+  padding: 0 0 31px;
+  @media screen and (min-width: $bp-tablet) {
+    padding: 52px 0 4px;
+  }
+  @media screen and (min-width: $bp-laptop) {
+    padding: 121px 0 109px;
+  }
+  &__contacts-container {
+    padding: 38px 0 23px;
+    @media screen and (min-width: $bp-tablet) {
+      padding: 31px 0 0;
+    }
+    @media screen and (min-width: $bp-laptop) {
+      padding: 0 200px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      padding: 0 280px;
+    }
+  }
+  &__wrapper-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: 0.6fr 1.2fr;
+      align-items: start;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      grid-template-columns: 0.4fr 1.1fr;
+    }
+  }
+  &__address-wrapper {
+    padding: 0 43px 0 15px;
+    @media screen and (min-width: $bp-tablet) {
+      padding: 0 67px 0 31px;
+    }
+    @media screen and (min-width: $bp-laptop) {
+      padding: 0;
+    }
+  }
+  &__title {
+    font-size: 20px;
+    line-height: 1.3;
+    color: #333;
+    margin-bottom: 39px;
+    @media screen and (min-width: $bp-tablet) {
+      margin-bottom: 30px;
+    }
+    @media screen and (min-width: $bp-laptop) {
+      margin-bottom: 40px;
+    }
+  }
+  &__wrapper-list {
+    margin-bottom: 34px;
+    @media screen and (min-width: $bp-tablet) {
+      margin-bottom: 43px;
+    }
+    @media screen and (min-width: $bp-laptop) {
+      margin-bottom: 0;
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    @media screen and (min-width: 500px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 47px 70px;
+    }
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 37px;
+    }
+
+    li:nth-child(1) {
+      margin-bottom: 36px;
+      @media screen and (min-width: $bp-tablet) {
+        margin-bottom: 0;
+      }
+    }
+    li:nth-child(2) {
+      margin-bottom: 33px;
+      @media screen and (min-width: $bp-tablet) {
+        margin-bottom: 0;
+      }
+    }
+    li:nth-child(3) {
+      margin-bottom: 30px;
+      @media screen and (min-width: $bp-tablet) {
+        margin-bottom: 0;
+      }
+    }
+    li:nth-child(4) .contacts__address-text {
+      line-height: 1.6;
+    }
+  }
+  &__address-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+  &__text-free {
+    color: #999;
+  }
+  &__vib {
+    color: #79509a;
+  }
+  &__address-link {
+    line-height: 1.5;
+    color: #337ab7;
+  }
+  &__map {
+    width: 100%;
+    height: 570px;
+    border: none;
+    @media screen and (min-width: $bp-desktop) {
+        margin-top: -18px;
+    }
+  }
+}

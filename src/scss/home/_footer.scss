@@ -1,5 +1,5 @@
 .footer {
-  // padding: 13px 0 39px;
+  // padding: 44px 0 39px;
   background-color: #fff;
   @media screen and (min-width: $bp-tablet) {
     // padding: 12px 0 40px;
@@ -8,7 +8,7 @@
     padding: 69px 0 32px;
   }
   @media screen and (min-width: $bp-desktop) {
-    padding: 70px 0 32px;
+    // padding: 70px 0 32px;
   }
 
   &__container {
@@ -48,6 +48,9 @@
     padding: 13px 0 39px;
     @media screen and (min-width: $bp-tablet) {
       padding: 13px 0 40px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      padding: 0 0 32px;
     }
   }
   &__text {
