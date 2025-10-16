@@ -2,14 +2,14 @@
   background: #fff;
   padding: 0 0 44px;
   @media screen and (min-width: $bp-tablet) {
-    padding: 45px 0 77px;
+    padding: 45px 0 60px;
   }
   @media screen and (min-width: $bp-desktop) {
-    padding: 111px 0 40px;
+    padding: 115px 0 0;
   }
   &__supply-container {
-    // padding: 0 15px;
-    @media screen and (min-width: $bp-tablet) {
+    @media screen and (min-width: $bp-laptop) {
+      padding: 0 200px;
     }
     @media screen and (min-width: $bp-desktop) {
       padding: 0 280px;
@@ -25,6 +25,9 @@
       padding: 27px 0 0;
       justify-items: flex-start;
     }
+    @media screen and (min-width: $bp-desktop) {
+      padding: 0;
+    }
   }
   &__title {
     color: #333;
@@ -36,39 +39,74 @@
     @media screen and (min-width: $bp-tablet) {
       width: auto;
       margin-bottom: 32px;
+      padding-left: 30px;
+    }
+    @media screen and (min-width: $bp-laptop) {
+      padding-left: 0;
+      margin-bottom: 42px;
     }
   }
   &__wrapper-list {
-    @media screen and (min-width: 500px) {
-      display: grid;
-      align-items: center;
+    display: grid;
+    align-items: center;
+  }
+  &__img {
+    margin-bottom: -25px;
+    width: 100vw;
+    @media screen and (min-width: $bp-tablet) {
+      margin-bottom: 5px;
+      margin-top: -24px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      margin-top: -16px;
+      margin-bottom: -70px;
+    }
+  }
+  &__img-work {
+    margin-bottom: -8px;
+    width: 100vw;
+    @media screen and (min-width: $bp-tablet) {
+      margin-bottom: 0px;
+      margin-top: -4px;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      margin-top: -35px;
     }
   }
   &__list {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
-    @media screen and (min-width: 500px) {
+    padding: 0 15px;
+    @media screen and (min-width: 600px) {
       grid-template-columns: repeat(3, 1fr);
       gap: 32px 20px;
       grid-row: 1;
       justify-items: center;
       align-items: center;
       margin-bottom: -5px;
-      padding: 0 30px;
     }
     @media screen and (min-width: $bp-tablet) {
       grid-template-columns: repeat(3, 1fr);
-      gap: 32px 52px;
+      gap: 32px 27px;
       grid-row: 1;
-      justify-items: baseline;
       align-items: start;
       margin-bottom: -5px;
       padding: 0 30px;
     }
     @media screen and (min-width: 1024px) {
-      grid-template-columns: repeat(6, 1fr);
+      .supply__wrapper-list:nth-of-type(1) & {
+        grid-template-columns: repeat(5, 1fr);
+      }
+      .supply__wrapper-list:nth-of-type(2) & {
+        grid-template-columns: repeat(6, 1fr);
+      }
       gap: 31px;
+      padding: 0;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      gap: 0;
+      margin-bottom: 0;
     }
   }
   &__content-item {
@@ -85,6 +123,9 @@
     text-align: center;
     font-size: 16px;
     line-height: 1.37;
+    @media screen and (min-width: $bp-desktop) {
+      width: 227px;
+    }
   }
   &__title-work {
     color: #333;
@@ -93,10 +134,16 @@
     line-height: 1.3;
     width: 231px;
     margin-top: 50px;
+    margin-bottom: 12px;
     @media screen and (min-width: $bp-tablet) {
       width: auto;
       margin-top: -13px;
       margin-bottom: 18px;
+      padding-left: 30px;
+    }
+    @media screen and (min-width: $bp-laptop) {
+      margin-bottom: 48px;
+      padding-left: 0;
     }
   }
 }
